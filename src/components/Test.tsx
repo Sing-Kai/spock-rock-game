@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import getRandomOption from '../helpers/get-random-option'
+import getWinner from '../helpers/get-winner'
 
 const Test = () =>{
 
@@ -9,6 +10,10 @@ const Test = () =>{
   const handleOnClick = (value: string) => {
     setUserSelection(value)
     setcomputerSelction(getRandomOption());
+
+    const winner = getWinner(userSelction, computerSelction)
+
+    console.log(winner);
   }
 
   const handleReset = () => {
@@ -27,7 +32,7 @@ const Test = () =>{
       <div>
         {'User has selected ' + userSelction}
       </div>
-      
+
       <section>
         <button onClick={()=> handleOnClick('ROCK')}>Rock</button>
         <button onClick={()=> handleOnClick('PAPER')}>Paper</button>
