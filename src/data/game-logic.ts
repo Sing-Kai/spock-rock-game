@@ -1,17 +1,9 @@
 const gameLogic = {
-  scissors: {
-    beats: ['PAPER', 'LIZARD']
-  },
-  paper: {
-    beats: ['ROCK', 'SPOCK']
-  },
-  rock: {
-    beats: ['SCISSORS', 'LIZARD']
-  },
-  lizard: {
-    beats: ['PAPER', 'SPOCK']
-  },
-  spock: {
-    beats: ['SCISSORS', 'ROCK']
-  }
+  scissors: ['PAPER', 'LIZARD'],
+  paper: ['ROCK', 'SPOCK'],
+  rock: ['SCISSORS', 'LIZARD'],
+  lizard: ['PAPER', 'SPOCK'],
+  spock: ['SCISSORS', 'ROCK'],
 }
+
+export default gameLogic

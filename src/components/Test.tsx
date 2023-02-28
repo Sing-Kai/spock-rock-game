@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import getRandomOption from '../helpers/get-random-option'
 import getWinner from '../helpers/get-winner'
 
@@ -10,11 +10,12 @@ const Test = () =>{
   const handleOnClick = (value: string) => {
     setUserSelection(value)
     setcomputerSelction(getRandomOption());
-
-    const winner = getWinner(userSelction, computerSelction)
-
-    console.log(winner);
   }
+
+  useEffect(()=> {
+    const winner = getWinner(userSelction, computerSelction)
+    console.log(winner);
+  }, [userSelction, computerSelction])
 
   const handleReset = () => {
     setUserSelection('')
