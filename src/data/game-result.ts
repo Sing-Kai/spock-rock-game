@@ -1,4 +1,5 @@
 enum GameResult {
+  Start,
   User,
   Computer,
   Tie,

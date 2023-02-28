@@ -3,6 +3,10 @@ import gameLogic from "src/data/game-logic";
 
 const getWinner = (userOption: string, computerOption:string) => {
 
+  if(userOption === ''){
+    return GameResult.Start
+  }
+
   if(userOption === computerOption){
     console.log('its a tie')
     return GameResult.Tie

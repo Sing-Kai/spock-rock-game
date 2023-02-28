@@ -1,7 +1,7 @@
 enum Options {
   Rock = "ROCK",
   Paper = "PAPER",
-  Scissor = "SCISSOR",
+  Scissor = "SCISSORS",
   Lizard = "LIZARD",
   Spock = "SPOCK"
 }
