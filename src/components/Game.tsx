@@ -2,14 +2,16 @@ import React, {useEffect, useState} from 'react'
 import getRandomOption from '../helpers/get-random-option'
 import getWinner from '../helpers/get-winner'
 import GameResult from '../data/game-result';
-import Results from '../components/Results';
+import Results from './Results';
+import useStore, { GameState } from "../hooks/useStore"
 
 
-const Test = () =>{
+const Game = () =>{
 
   const [userSelction, setUserSelection] = useState('')
   const [computerSelction, setcomputerSelction] = useState('')
   const [gameResult, setGameResult] = useState(GameResult.Start)
+  const { playerWins, computerWins, player, computer, reset } = useStore()
 
   const handleOnClick = (value: string) => {
     setUserSelection(value)
@@ -18,27 +20,37 @@ const Test = () =>{
 
   useEffect(()=> {
     const winner = getWinner(userSelction, computerSelction)
+
+    if(winner === GameResult.User){
+      playerWins(1)
+    }
+
+    if(winner === GameResult.Computer){
+      computerWins(1)
+    }
+
     setGameResult(winner);
-  }, [userSelction, computerSelction])
+  }, [userSelction])
 
   const handleReset = () => {
     setUserSelection('')
     setcomputerSelction('')
-    setGameResult(GameResult.Start);
+    reset();
   }
-
-  // const getResult = () =>{
-
-  //   console.log('result is ', gameResult);
-
-  // } 
-
-  // const content = 
 
   return (
     <div>
       <h1>Rock Paper Scissor Lizard Spock</h1>
-      <Results result={gameResult}/>
+      <div>
+        <div>
+          <span>{'player total: ' + player }</span>
+        </div>
+        <div>
+          <span>{'computer total: ' + computer }</span>
+        </div>
+
+      </div>
+      <Results result={gameResult} />
       <div>
         {'Computer has selected ' + computerSelction}
       </div>
@@ -65,4 +77,4 @@ const Test = () =>{
 
 }
 
-export default Test
+export default Game

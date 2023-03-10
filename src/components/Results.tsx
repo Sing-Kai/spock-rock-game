@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
+import useStore, { GameState } from "../hooks/useStore"
+import getWinner from '../helpers/get-winner'
 import GameResult from "../data/game-result"
 
 const Results = ({result}) => {
@@ -13,10 +15,9 @@ const Results = ({result}) => {
 
   if(GameResult.User === result){
     return <div>{'User Wins'}</div>
+  } else{ 
+    return <div>{'Computer Wins'}</div>
   }
-
-  return <div>{'Computer Wins'}</div>
-
 }
 
 export default Results
