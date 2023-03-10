@@ -1,4 +1,5 @@
 import React from 'react'
+const rules = require('../images/rules.jpeg')
 
 const Rules = ({updateGameState}) => {
   return (
@@ -7,9 +8,9 @@ const Rules = ({updateGameState}) => {
         <h1>
           Rules 
         </h1>
-        <p>
-          Add desc and image
-        </p>
+      </div>
+      <div>
+        <img src={rules} alt='rules'/>
       </div>
       <div>
         <button onClick={()=>{updateGameState('menu')}}>

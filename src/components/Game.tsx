@@ -18,6 +18,10 @@ const Game = () =>{
     setcomputerSelction(getRandomOption());
   }
 
+  useEffect(()=>{
+    reset();
+  }, [])
+
   useEffect(()=> {
     const winner = getWinner(userSelction, computerSelction)
 
@@ -30,7 +34,7 @@ const Game = () =>{
     }
 
     setGameResult(winner);
-  }, [userSelction])
+  }, [userSelction, computerSelction])
 
   const handleReset = () => {
     setUserSelection('')
