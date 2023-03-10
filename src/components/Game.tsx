@@ -3,7 +3,7 @@ import getRandomOption from '../helpers/get-random-option'
 import getWinner from '../helpers/get-winner'
 import GameResult from '../data/game-result';
 import Results from './Results';
-import useStore, { GameState } from "../hooks/useStore"
+import useStore from "../hooks/useStore"
 
 
 const Game = () =>{
@@ -11,7 +11,7 @@ const Game = () =>{
   const [userSelction, setUserSelection] = useState('')
   const [computerSelction, setcomputerSelction] = useState('')
   const [gameResult, setGameResult] = useState(GameResult.Start)
-  const { playerWins, computerWins, player, computer, reset } = useStore()
+  const { playerWins, computerWins, player, computer, reset, updateGameState } = useStore()
 
   const handleOnClick = (value: string) => {
     setUserSelection(value)
@@ -70,6 +70,9 @@ const Game = () =>{
       <section>
         <div>
           <button onClick={()=> handleReset()}>Reset</button>
+        </div>
+        <div>
+          <button onClick={()=> updateGameState('menu')}>Menu</button>
         </div>
       </section>
     </div>
