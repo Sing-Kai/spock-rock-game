@@ -3,6 +3,7 @@ import useStore from "../hooks/useStore"
 import Game from "./Game"
 import Menu from "./Menu"
 import Rules from "./Rules"
+import { motion } from "framer-motion"
 
 const Canvas = () => {
   const {gameState, updateGameState} = useStore();
@@ -15,7 +16,9 @@ const Canvas = () => {
     return <Rules updateGameState = {updateGameState}/>
   }
 
-  return <Game/>
+  return (
+    <Game/>
+  )
 }
 
 export default Canvas

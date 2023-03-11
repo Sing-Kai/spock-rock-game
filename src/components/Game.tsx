@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-regular-svg-icons';
 //import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-solid-svg-icons';
 //import { solid} from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+import { motion } from "framer-motion"
 
 
 const Game = () =>{
@@ -47,10 +48,16 @@ const Game = () =>{
   }
 
   return (
-    <div>
-      <h1 className="header">Rock Paper Spock</h1>
+    <motion.div
+          className="container text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 3 }}
+    >
+      <h1 className="header wave">Rock Paper Spock</h1>
 
-      <div className='mt-10'>
+      <div className='animate-bounce mt-10'>
         <span>select an option:</span>
       </div>
 
@@ -130,13 +137,13 @@ const Game = () =>{
 
       <div className="button-container">
         <div>
-          <button className="button" onClick={()=> updateGameState('menu')}>Return to Menu</button>
+          <button className="button" onClick={()=> updateGameState('menu')}>Menu</button>
         </div>
         <div>
           <button className="button" onClick={()=> handleReset()}>Reset Scores</button>
         </div>
       </div>
-    </div>
+      </motion.div>
   )
 
 }
