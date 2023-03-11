@@ -24,8 +24,6 @@ const Spin = ({play, progress, updateProgress})=>{
       setIcon(item);
     }, 100);
 
-    console.log('finished game!!!')
-
     return () => clearInterval(intervalRef.current);
   }, [play]);
 

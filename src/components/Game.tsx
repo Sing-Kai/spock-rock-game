@@ -6,17 +6,18 @@ import Results from './Results';
 import useStore from "../hooks/useStore"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-regular-svg-icons';
-//import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-solid-svg-icons';
-//import { solid} from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import {PageTransition, OptionHover} from './animation/index'
 import Progress from '../data/enums';
 import Computer from './Computer';
 
+//import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-solid-svg-icons';
+//import { solid} from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 
 const Game = () =>{
   const [play, setPlay] = useState(false);
   const [userSelction, setUserSelection] = useState('')
   const [computerSelction, setcomputerSelction] = useState('')
+  const [icon, setIcon] = useState(null);
   const [gameResult, setGameResult] = useState(GameResult.Start)
   const { playerWins, computerWins, player, computer, reset, updateGameState, progress, updateProgress } = useStore()
 
@@ -56,7 +57,12 @@ const Game = () =>{
       <h1 className="header wave">Rock Paper Spock</h1>
 
       <div>
-        <Computer play={play} progress={progress} updateProgress={updateProgress}/>
+        <Computer 
+          play={play} 
+          progress={progress} 
+          updateProgress={updateProgress} 
+          finalIcon ={computerSelction}
+        />
       </div>
 
       <div className='mt-10'>
@@ -162,7 +168,6 @@ const Game = () =>{
       </div>
       </PageTransition>
   )
-
 }
 
 export default Game
