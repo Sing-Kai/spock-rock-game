@@ -3,12 +3,14 @@ import {motion} from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-regular-svg-icons';
 import Progress from '../../data/enums';
+import useStore from "../../hooks/useStore";
 
 
-const Spin = ({play, progress, updateProgress})=>{
+const Spin = ({play})=>{
 
+  const { updateProgress } = useStore()
   const [icon, setIcon] = useState(faHandRock);
-  const [timeLeft, setTimeLeft] = useState(6);
+  const [timeLeft, setTimeLeft] = useState(10);
   const intervalRef = useRef();
 
   useEffect(() => {
@@ -33,19 +35,6 @@ const Spin = ({play, progress, updateProgress})=>{
       updateProgress(Progress.Finished)
     }
   }, [timeLeft]);
-
-  useEffect(()=>{
-
-    const random = [
-      faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock
-    ]
-
-    const item = random[Math.floor(Math.random()*random.length)];
-
-    setIcon(item);
-
-    setTimeLeft(15)
-  },[play])
 
   return(
     <motion.div

@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {Spin} from './animation'
 import Progress from '../data/enums'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-regular-svg-icons';
+import { faHandRock} from '@fortawesome/free-regular-svg-icons';
 import getIcon from '../helpers/get-icon';
 
-const Computer = ({play, progress, updateProgress, finalIcon}) => {
+const Computer = ({play, progress, finalIcon}) => {
 
   if(progress === Progress.Ready){
     return (
@@ -27,7 +27,7 @@ const Computer = ({play, progress, updateProgress, finalIcon}) => {
   }
 
   return (
-      <Spin play={play} progress={progress} updateProgress={updateProgress}/>
+      <Spin play={play}/>
   )
 }
 
