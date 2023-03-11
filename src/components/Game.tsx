@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-regular-svg-icons';
 //import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-solid-svg-icons';
 //import { solid} from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
-import {PageTransition, OptionHover, Spin} from './animation/index'
+import {PageTransition, OptionHover} from './animation/index'
 import Progress from '../data/enums';
 import Computer from './Computer';
 

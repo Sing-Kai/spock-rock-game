@@ -13,7 +13,6 @@ const Spin = ({play, progress, updateProgress})=>{
 
   useEffect(() => {
 
-    // if(gameState !== 'start') return
     intervalRef.current = setInterval(() => {
       setTimeLeft((t) => t - 0.5);
       const random = [
