@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*.ts", "tests/**/*.ts"],
+  "include": ["src/**/*.ts", "tests/**/*.ts", "src/components/animation/index.txs"],
   "exclude": ["node_modules", ".vscode"],
   "compilerOptions": {
     "jsx": "react",

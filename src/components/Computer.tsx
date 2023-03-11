@@ -18,7 +18,7 @@ const Computer = ({play, progress, updateProgress, finalIcon}) => {
   if(progress === Progress.Finished){
 
     const icon = getIcon(finalIcon);
-    console.log('computers final selection ', finalIcon)
+
     return (
       <div className="mt-10">
         <FontAwesomeIcon icon={icon} size="4x"/>

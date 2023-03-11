@@ -9,6 +9,8 @@ import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } fr
 import {PageTransition, OptionHover} from './animation/index'
 import Progress from '../data/enums';
 import Computer from './Computer';
+import Scores from './Scores';
+import Quote from './Quote';
 
 //import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-solid-svg-icons';
 //import { solid} from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
@@ -17,7 +19,6 @@ const Game = () =>{
   const [play, setPlay] = useState(false);
   const [userSelction, setUserSelection] = useState('')
   const [computerSelction, setcomputerSelction] = useState('')
-  const [icon, setIcon] = useState(null);
   const [gameResult, setGameResult] = useState(GameResult.Start)
   const { playerWins, computerWins, player, computer, reset, updateGameState, progress, updateProgress } = useStore()
 
@@ -50,6 +51,7 @@ const Game = () =>{
     setUserSelection('')
     setcomputerSelction('')
     reset();
+    updateProgress(Progress.Ready)
   }
 
   return (
@@ -65,7 +67,7 @@ const Game = () =>{
         />
       </div>
 
-      <div className='mt-10'>
+      <div className='mt-10 text-3xl'>
         <span>vs</span>
       </div>
 
@@ -102,33 +104,9 @@ const Game = () =>{
 
       </div>
 
-      <div className="mt-4 mb-8">
-        <div className="w-64 mt-5 mb-5 ml-auto mr-auto p-1 flex flex-col justify-center">
-          <div className="text-left">
-            <span className='text-left'>{'Scores'}</span>
-          </div>
-          <div className='flex flex-row justify-between'>
-            <div>
-              <span >{'player total: '}</span>  
-            </div>
-            <div>
-              <span >{player}</span>  
-            </div>
-          </div>
+      <Scores player={player} computer={computer}/>
 
-          <div className='flex flex-row justify-between'>
-            <div>
-              <span >{'computer total: '}</span>  
-            </div>
-            <div>
-              <span >{computer}</span>  
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div className="mt-4 mb-4">
+      {/* <div className="mt-4 mb-4">
         <div className="w-72 ml-auto mr-auto p-1">
           <div className='flex flex-row justify-between'>
             <div>
@@ -152,11 +130,15 @@ const Game = () =>{
           </div>
 
         </div>
+      </div> */}
+
+      <div className="mb-10">
+        <Quote player={userSelction} computer={computerSelction}/>
       </div>
 
-      <div className='mt-4 mb-4'>
+      {/* <div className='mt-4 mb-4'>
         <Results result={gameResult} />
-      </div>
+      </div> */}
 
       <div className="button-container">
         <div>

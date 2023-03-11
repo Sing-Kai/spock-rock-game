@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react"
-import useStore, { GameState } from "../hooks/useStore"
-import getWinner from '../helpers/get-winner'
+import React from "react"
 import GameResult from "../data/game-result"
 
 const Results = ({result}) => {
