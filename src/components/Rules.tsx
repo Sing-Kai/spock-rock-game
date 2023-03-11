@@ -13,7 +13,7 @@ const Rules = ({updateGameState}) => {
         <img src={rules} alt='rules'/>
       </div>
       <div>
-        <button onClick={()=>{updateGameState('menu')}}>
+        <button className="button"onClick={()=>{updateGameState('menu')}}>
           Return to Menu
         </button>
       </div>

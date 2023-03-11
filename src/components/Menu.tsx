@@ -5,19 +5,19 @@ const Menu = ({updateGameState}) => {
   return (
   <div>
     <div>
-      <h1>Rock Paper Spock</h1>
-      <p>Add some game description</p>
-      <img src={spock} alt="spock"></img>
+      <h1 className="header">Rock Paper Spock</h1>
+      <p className="text-2xl m-1 p-1">Add some game description</p>
+      <img className="mt-3 mb-3 " src={spock} alt="spock"></img>
     </div>
-    <div>
+    <div className="button-container">
       <div>
-        <button onClick={()=>{updateGameState('start')}}>
-          start game
+        <button className="button" onClick={()=>{updateGameState('start')}}>
+          play
         </button>
       </div>
       <div>
-        <button onClick={()=>{updateGameState('rules')}}>
-          rule
+        <button className="button" onClick={()=>{updateGameState('rules')}}>
+          rules
         </button>
       </div>
     </div>
