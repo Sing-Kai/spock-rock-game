@@ -8,21 +8,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-regular-svg-icons';
 //import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-solid-svg-icons';
 //import { solid} from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
-import PageTransition from './animation/PageTransition'
-import OptionHover from './animation/OptionHover'
-import { motion } from "framer-motion"
+import {PageTransition, OptionHover, Spin} from './animation/index'
+import Progress from '../data/enums';
+import Computer from './Computer';
 
 
 const Game = () =>{
-
+  const [play, setPlay] = useState(false);
   const [userSelction, setUserSelection] = useState('')
   const [computerSelction, setcomputerSelction] = useState('')
   const [gameResult, setGameResult] = useState(GameResult.Start)
-  const { playerWins, computerWins, player, computer, reset, updateGameState } = useStore()
+  const { playerWins, computerWins, player, computer, reset, updateGameState, progress, updateProgress } = useStore()
 
   const handleOnClick = (value: string) => {
     setUserSelection(value)
     setcomputerSelction(getRandomOption());
+    setPlay((current)=>!current)
+    updateProgress(Progress.Playing);
   }
 
   useEffect(()=>{
@@ -53,11 +55,15 @@ const Game = () =>{
     <PageTransition>
       <h1 className="header wave">Rock Paper Spock</h1>
 
-      <div className='animate-bounce mt-10'>
-        <span>select an option:</span>
+      <div>
+        <Computer play={play} progress={progress} updateProgress={updateProgress}/>
       </div>
 
-      <div className="flex flex-row justify-center gap-5 mb-3 mt-5">
+      <div className='mt-10'>
+        <span>vs</span>
+      </div>
+
+      <div className="flex flex-row justify-center gap-2 mb-3 mt-5">
         <OptionHover>
           <button className="select-option" onClick={()=> handleOnClick('ROCK')}>
             <FontAwesomeIcon icon={faHandRock} size="4x"/>
