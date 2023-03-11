@@ -1,5 +1,5 @@
 import React from 'react'
-import PageTransition from './page/PageTransition'
+import {PageTransition, OptionHover} from './animation/index'
 
 const spock = require('../images/spock.jpeg')
 
@@ -16,16 +16,16 @@ const Menu = ({updateGameState}) => {
 
       </div>
       <div className="button-container">
-        <div>
+        <OptionHover>
           <button className="button" onClick={()=>{updateGameState('start');}}>
             play
           </button>
-        </div>
-        <div>
+        </OptionHover>
+        <OptionHover>
           <button className="button" onClick={()=>{updateGameState('rules')}}>
             rules
           </button>
-        </div>
+        </OptionHover>
       </div>
       </PageTransition>
   )

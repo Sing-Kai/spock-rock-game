@@ -8,7 +8,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-regular-svg-icons';
 //import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-solid-svg-icons';
 //import { solid} from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
-import PageTransition from './page/PageTransition'
+import PageTransition from './animation/PageTransition'
+import OptionHover from './animation/OptionHover'
+import { motion } from "framer-motion"
 
 
 const Game = () =>{
@@ -55,22 +57,37 @@ const Game = () =>{
         <span>select an option:</span>
       </div>
 
-      <div className="flex flex-row justify-center gap-3 mb-3 mt-5">
-        <button className="select-option" onClick={()=> handleOnClick('ROCK')}>
-          <FontAwesomeIcon icon={faHandRock} size="4x"/>
-        </button>
-        <button className="select-option" onClick={()=> handleOnClick('PAPER')}>
-          <FontAwesomeIcon icon={faHandPaper} size="4x"/>
-        </button>
-        <button className="select-option" onClick={()=> handleOnClick('SCISSORS')}>
-          <FontAwesomeIcon icon={faHandScissors} size="4x"/>
-        </button>
-        <button className="select-option" onClick={()=> handleOnClick('LIZARD')}>
-          <FontAwesomeIcon icon={faHandLizard} size="4x"/>
-        </button>
-        <button className="select-option" onClick={()=> handleOnClick('SPOCK')}>
-          <FontAwesomeIcon icon={faHandSpock} size="4x"/>
-        </button>
+      <div className="flex flex-row justify-center gap-5 mb-3 mt-5">
+        <OptionHover>
+          <button className="select-option" onClick={()=> handleOnClick('ROCK')}>
+            <FontAwesomeIcon icon={faHandRock} size="4x"/>
+          </button>
+        </OptionHover>
+
+        <OptionHover>
+          <button className="select-option" onClick={()=> handleOnClick('PAPER')}>
+            <FontAwesomeIcon icon={faHandPaper} size="4x"/>
+          </button>
+        </OptionHover>
+
+        <OptionHover>
+          <button className="select-option" onClick={()=> handleOnClick('SCISSORS')}>
+            <FontAwesomeIcon icon={faHandScissors} size="4x"/>
+          </button>
+        </OptionHover>
+        
+        <OptionHover>
+          <button className="select-option" onClick={()=> handleOnClick('LIZARD')}>
+            <FontAwesomeIcon icon={faHandLizard} size="4x"/>
+          </button>
+        </OptionHover>
+
+        <OptionHover>
+          <button className="select-option" onClick={()=> handleOnClick('SPOCK')}>
+            <FontAwesomeIcon icon={faHandSpock} size="4x"/>
+          </button>
+        </OptionHover>
+
       </div>
 
       <div className="mt-4 mb-8">
