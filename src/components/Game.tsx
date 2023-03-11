@@ -4,6 +4,10 @@ import getWinner from '../helpers/get-winner'
 import GameResult from '../data/game-result';
 import Results from './Results';
 import useStore from "../hooks/useStore"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-regular-svg-icons';
+//import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-solid-svg-icons';
+//import { solid} from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 
 
 const Game = () =>{
@@ -46,8 +50,30 @@ const Game = () =>{
     <div>
       <h1 className="header">Rock Paper Spock</h1>
 
-      <div className="mt-8 mb-8">
-        <div className="w-64 mt-5 mb-5 ml-auto mr-auto p-5 flex flex-col justify-center">
+      <div className='mt-10'>
+        <span>select an option:</span>
+      </div>
+
+      <div className="flex flex-row justify-center gap-3 mb-3 mt-5">
+        <button className="select-option" onClick={()=> handleOnClick('ROCK')}>
+          <FontAwesomeIcon icon={faHandRock} size="4x"/>
+        </button>
+        <button className="select-option" onClick={()=> handleOnClick('PAPER')}>
+          <FontAwesomeIcon icon={faHandPaper} size="4x"/>
+        </button>
+        <button className="select-option" onClick={()=> handleOnClick('SCISSORS')}>
+          <FontAwesomeIcon icon={faHandScissors} size="4x"/>
+        </button>
+        <button className="select-option" onClick={()=> handleOnClick('LIZARD')}>
+          <FontAwesomeIcon icon={faHandLizard} size="4x"/>
+        </button>
+        <button className="select-option" onClick={()=> handleOnClick('SPOCK')}>
+          <FontAwesomeIcon icon={faHandSpock} size="4x"/>
+        </button>
+      </div>
+
+      <div className="mt-4 mb-8">
+        <div className="w-64 mt-5 mb-5 ml-auto mr-auto p-1 flex flex-col justify-center">
           <div className="text-left">
             <span className='text-left'>{'Scores'}</span>
           </div>
@@ -70,7 +96,10 @@ const Game = () =>{
           </div>
         </div>
 
-        <div className="w-72 ml-auto mr-auto p-5">
+      </div>
+
+      <div className="mt-4 mb-4">
+        <div className="w-72 ml-auto mr-auto p-1">
           <div className='flex flex-row justify-between'>
             <div>
               <span>Player</span>
@@ -93,25 +122,18 @@ const Game = () =>{
           </div>
 
         </div>
-
-        <Results result={gameResult} />
       </div>
 
-
-      <div className="flex flex-row justify-center gap-3 mb-3 mt-3">
-        <button className="button" onClick={()=> handleOnClick('ROCK')}>Rock</button>
-        <button className="button" onClick={()=> handleOnClick('PAPER')}>Paper</button>
-        <button className="button" onClick={()=> handleOnClick('SCISSORS')}>Scissor</button>
-        <button className="button" onClick={()=> handleOnClick('LIZARD')}>Lizard</button>
-        <button className="button" onClick={()=> handleOnClick('SPOCK')}>Spock</button>
+      <div className='mt-4 mb-4'>
+        <Results result={gameResult} />
       </div>
 
       <div className="button-container">
         <div>
-          <button className="button" onClick={()=> handleReset()}>Reset</button>
+          <button className="button" onClick={()=> updateGameState('menu')}>Return to Menu</button>
         </div>
         <div>
-          <button className="button" onClick={()=> updateGameState('menu')}>Menu</button>
+          <button className="button" onClick={()=> handleReset()}>Reset Scores</button>
         </div>
       </div>
     </div>

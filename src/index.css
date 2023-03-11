@@ -11,6 +11,10 @@
     @apply bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-40;
   }
 
+  .select-option{
+    @apply bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 rounded w-40;
+  }
+
   .button-container {
     @apply flex flex-col gap-y-3
   }

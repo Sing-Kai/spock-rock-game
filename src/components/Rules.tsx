@@ -5,7 +5,7 @@ const Rules = ({updateGameState}) => {
   return (
     <div>
       <div>
-        <h1>
+        <h1 className='header'>
           Rules 
         </h1>
       </div>
