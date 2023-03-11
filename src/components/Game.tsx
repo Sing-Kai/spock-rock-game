@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-regular-svg-icons';
 //import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-solid-svg-icons';
 //import { solid} from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
-import { motion } from "framer-motion"
+import PageTransition from './page/PageTransition'
 
 
 const Game = () =>{
@@ -48,13 +48,7 @@ const Game = () =>{
   }
 
   return (
-    <motion.div
-          className="container text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 3 }}
-    >
+    <PageTransition>
       <h1 className="header wave">Rock Paper Spock</h1>
 
       <div className='animate-bounce mt-10'>
@@ -143,7 +137,7 @@ const Game = () =>{
           <button className="button" onClick={()=> handleReset()}>Reset Scores</button>
         </div>
       </div>
-      </motion.div>
+      </PageTransition>
   )
 
 }

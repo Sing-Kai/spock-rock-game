@@ -1,10 +1,11 @@
 import React from 'react'
+import PageTransition from './page/PageTransition'
 
 const spock = require('../images/spock.jpeg')
 
 const Menu = ({updateGameState}) => {
   return (
-    <div>
+    <PageTransition>
       <div>
         <h1 className="header">Rock Paper Spock</h1>
         {/* <p className="text-2xl m-1 p-1">Add some game description</p> */}
@@ -26,7 +27,7 @@ const Menu = ({updateGameState}) => {
           </button>
         </div>
       </div>
-    </div>
+      </PageTransition>
   )
 }
 

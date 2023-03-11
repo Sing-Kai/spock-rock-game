@@ -1,17 +1,11 @@
 import React from 'react'
-import { motion } from "framer-motion"
+import PageTransition from './page/PageTransition'
 
 const rules = require('../images/rules.jpeg')
 
 const Rules = ({updateGameState}) => {
   return (
-    <motion.div
-          className="flex flex-col"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 3 }}
-    >
+    <PageTransition>
       <div>
         <h1 className='header'>
           Rules 
@@ -25,7 +19,7 @@ const Rules = ({updateGameState}) => {
           Return to Menu
         </button>
       </div>
-    </motion.div>
+    </PageTransition>
   )
 }
 
