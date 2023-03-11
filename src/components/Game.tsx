@@ -30,6 +30,7 @@ const Game = () =>{
   }
 
   useEffect(()=>{
+    updateProgress(Progress.Ready)
     reset();
   }, [])
 
@@ -62,7 +63,6 @@ const Game = () =>{
         <Computer 
           play={play} 
           progress={progress} 
-          updateProgress={updateProgress} 
           finalIcon ={computerSelction}
         />
       </div>
@@ -148,7 +148,7 @@ const Game = () =>{
           <button className="button" onClick={()=> handleReset()}>Reset Scores</button>
         </div>
       </div>
-      </PageTransition>
+    </PageTransition>
   )
 }
 
