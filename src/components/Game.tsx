@@ -12,9 +12,6 @@ import Computer from './Computer';
 import Scores from './Scores';
 import Quote from './Quote';
 
-//import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-solid-svg-icons';
-//import { solid} from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
-
 const Game = () =>{
   const [play, setPlay] = useState(false);
   const [userSelction, setUserSelection] = useState('')
@@ -106,39 +103,9 @@ const Game = () =>{
 
       <Scores player={player} computer={computer}/>
 
-      {/* <div className="mt-4 mb-4">
-        <div className="w-72 ml-auto mr-auto p-1">
-          <div className='flex flex-row justify-between'>
-            <div>
-              <span>Player</span>
-            </div>
-            <div>
-              <span>Computer</span>
-            </div>
-          </div>
-
-          <div className='flex flex-row justify-between'>
-            <div>
-              {userSelction}
-            </div>
-            <div>
-              <span>vs</span>
-            </div>
-            <div>
-            {computerSelction} 
-            </div>
-          </div>
-
-        </div>
-      </div> */}
-
       <div className="mb-10">
         <Quote player={userSelction} computer={computerSelction}/>
       </div>
-
-      {/* <div className='mt-4 mb-4'>
-        <Results result={gameResult} />
-      </div> */}
 
       <div className="button-container">
         <div>

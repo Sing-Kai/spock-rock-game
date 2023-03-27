@@ -13,12 +13,6 @@ const Quote = ({player, computer}) => {
     </div>
   }
 
-  if(progress === Progress.Start){
-    return <div className="text-5xl">
-      {'Start'}
-    </div>
-  }
-
   if(progress === Progress.Finished){
     const quote = getQuote(player, computer, quotes)
     return <div className="text-5xl">

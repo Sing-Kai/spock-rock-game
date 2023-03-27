@@ -1,6 +1,5 @@
 enum Progress {
   Ready,
-  Start,
   Playing,
   Finished
 }
