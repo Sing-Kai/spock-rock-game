@@ -1,9 +1,9 @@
 import React from 'react'
-import {PageTransition, OptionHover} from './animation/index'
+import {PageTransition} from '../animation/index'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-regular-svg-icons';
+import { faHandRock, faHandPaper,faHandSpock } from '@fortawesome/free-regular-svg-icons';
 
-const spock = require('../images/spock.jpeg')
+const spock = require('../../images/spock.jpeg')
 
 const Menu = ({updateGameState}) => {
   return (

@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react'
-import getRandomOption from '../helpers/get-random-option'
-import getWinner from '../helpers/get-winner'
-import GameResult from '../data/game-result';
-import useStore from "../hooks/useStore"
-import {PageTransition} from './animation/index'
-import Progress from '../data/enums';
-import Computer from './Computer';
-import Scores from './Scores';
-import Quote from './Quote';
-import PlayerOption from './buttons/PlayerOption';
-import playerOptions from '../data/player-options';
+import getRandomOption from '../../helpers/get-random-option'
+import getWinner from '../../helpers/get-winner'
+import GameResult from '../../data/game-result';
+import useStore from "../../hooks/useStore"
+import {PageTransition} from '../animation/index'
+import Progress from '../../data/enums';
+import Computer from '../Computer';
+import Scores from '../Scores';
+import Quote from '../Quote';
+import PlayerOption from '../buttons/PlayerOption';
+import playerOptions from '../../data/player-options';
 
 const Game = () =>{
   const [play, setPlay] = useState(false);

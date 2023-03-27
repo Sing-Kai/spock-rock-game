@@ -1,7 +1,7 @@
 import React from 'react'
-import {PageTransition, OptionHover} from './animation/index'
+import {PageTransition, OptionHover} from '../animation/index'
 
-const rules = require('../images/rules.jpeg')
+const rules = require('../../images/rules.jpeg')
 
 const Rules = ({updateGameState}) => {
   return (
