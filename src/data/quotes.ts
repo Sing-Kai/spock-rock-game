@@ -6,7 +6,6 @@ const quotes = [
   'Spock smashes Scissors',
   'Scissors decapitates Lizard',
   'Lizard eats Paper',
-  'Scissors cuts Paper',
   'Paper disproves Spock',
   'Spock vaporizes Rock',
   'Rock crushes Scissors',
