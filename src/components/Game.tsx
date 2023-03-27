@@ -2,15 +2,14 @@ import React, {useEffect, useState} from 'react'
 import getRandomOption from '../helpers/get-random-option'
 import getWinner from '../helpers/get-winner'
 import GameResult from '../data/game-result';
-import Results from './Results';
 import useStore from "../hooks/useStore"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-regular-svg-icons';
-import {PageTransition, OptionHover} from './animation/index'
+import {PageTransition} from './animation/index'
 import Progress from '../data/enums';
 import Computer from './Computer';
 import Scores from './Scores';
 import Quote from './Quote';
+import PlayerOption from './buttons/PlayerOption';
+import playerOptions from '../data/player-options';
 
 const Game = () =>{
   const [play, setPlay] = useState(false);
@@ -52,6 +51,14 @@ const Game = () =>{
     updateProgress(Progress.Ready)
   }
 
+  const options = playerOptions.map(({icon, option}) => <PlayerOption
+    key={option}
+    icon={icon}
+    option={option}
+    handlClick={handleOnClick}
+  />)
+
+
   return (
     <PageTransition>
       <h1 className="header wave">Rock Paper Spock</h1>
@@ -69,36 +76,9 @@ const Game = () =>{
       </div>
 
       <div className="flex flex-row justify-center gap-2 mb-3 mt-5">
-        <OptionHover>
-          <button className="select-option" onClick={()=> handleOnClick('ROCK')}>
-            <FontAwesomeIcon icon={faHandRock} size="4x"/>
-          </button>
-        </OptionHover>
-
-        <OptionHover>
-          <button className="select-option" onClick={()=> handleOnClick('PAPER')}>
-            <FontAwesomeIcon icon={faHandPaper} size="4x"/>
-          </button>
-        </OptionHover>
-
-        <OptionHover>
-          <button className="select-option" onClick={()=> handleOnClick('SCISSORS')}>
-            <FontAwesomeIcon icon={faHandScissors} size="4x"/>
-          </button>
-        </OptionHover>
-        
-        <OptionHover>
-          <button className="select-option" onClick={()=> handleOnClick('LIZARD')}>
-            <FontAwesomeIcon icon={faHandLizard} size="4x"/>
-          </button>
-        </OptionHover>
-
-        <OptionHover>
-          <button className="select-option" onClick={()=> handleOnClick('SPOCK')}>
-            <FontAwesomeIcon icon={faHandSpock} size="4x"/>
-          </button>
-        </OptionHover>
-
+        {
+          options
+        }
       </div>
 
       <Scores player={player} computer={computer}/>

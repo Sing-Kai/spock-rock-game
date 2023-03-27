@@ -31,7 +31,6 @@ const Spin = ({play})=>{
 
   useEffect(() => {
     if (timeLeft <= 0) {
-      clearInterval(intervalRef.current);
       updateProgress(Progress.Finished)
     }
   }, [timeLeft]);

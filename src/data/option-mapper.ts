@@ -1,4 +1,3 @@
-import Options from "./options";
 import { faHandRock, faHandPaper, faHandScissors, faHandLizard, faHandSpock } from '@fortawesome/free-regular-svg-icons';
 
 const optionsMapper = [
