@@ -51,13 +51,7 @@ const Game = () =>{
     updateProgress(Progress.Ready)
   }
 
-  const options = playerOptions.map(({icon, option}) => <PlayerOption
-    key={option}
-    icon={icon}
-    option={option}
-    handlClick={handleOnClick}
-  />)
-
+  const options = playerOptions.map(({icon, option}) => <PlayerOption key={option} icon={icon} option={option} handlClick={handleOnClick}/>)
 
   return (
     <PageTransition>

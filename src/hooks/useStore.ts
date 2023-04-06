@@ -17,7 +17,7 @@ const useStore = create<GameState>()((set) => ({
   player: 0,
   computer: 0,
   gameState: 'menu',
-  progress: Progress.Ready, //ready start playing end
+  progress: Progress.Ready,
   updateProgress: (s) => set(() => ({ progress: s })),
   updateGameState: (s) => set(() => ({ gameState: s })),
   playerWins: (by) => set((state) => ({ player: state.player + by })),

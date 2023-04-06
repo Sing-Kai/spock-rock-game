@@ -6,6 +6,7 @@ Implementation of Rock Paper Spock, made popular by Big Bang Theory. Game is bas
 
 - latest node version v19.9.0
 - React
+- Zustand
 - Tailwaind
 - Jest
 
@@ -17,6 +18,17 @@ Run application:
 
 Run Jest tests:
 - `npm run test`
+
+
+## Implementation Details
+
+Game state management here is using `zustand`  
+
+This keeps track of a few things
+- State of the game i.e where the user is overall
+- Progress of the game i.e has the users started playing?
+- Keeps track of player scores
+- Resets values 
 
 ## Game Rules
 ```
@@ -31,3 +43,4 @@ Paper disproves Spock
 Spock vaporizes Rock
 Rock crushes Scissors
 ```
+
